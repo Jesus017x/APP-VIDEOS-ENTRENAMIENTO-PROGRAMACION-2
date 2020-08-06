@@ -28,11 +28,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editEmail, editPassword, editFname, editPhone;
-    Button btnRegister;
-    TextView txtLogin;
-    FirebaseAuth fAuth;
-
     private VideoView mainVideoView;
     private ImageView playBtn;
     private TextView currentTimer;
@@ -52,61 +47,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editEmail = findViewById(R.id.editEmail);
-        editPassword = findViewById(R.id.editPassword);
-        editFname = findViewById(R.id.editFname);
-        editPhone = findViewById(R.id.editPhone);
-        btnRegister = findViewById(R.id.btnRegister);
-        txtLogin = findViewById(R.id.txtLogin);
-
-        fAuth = FirebaseAuth.getInstance();
-
-        if(fAuth.getCurrentUser() != null){
-            Toast.makeText(MainActivity.this, "User already logged in", Toast.LENGTH_SHORT).show();
-        }
-
-        //Registro
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = editEmail.getText().toString().trim();
-                String password = editPassword.getText().toString().trim();
-
-                if (TextUtils.isEmpty(email)){
-                    editEmail.setError("Email is required");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(password)){
-                    editPassword.setError("Password is required");
-                    return;
-                }
-
-                if(password.length() < 6){
-                    editPassword.setError("Password must have 6 or more characters");
-                    return;
-                }
-
-                //Registrar el usuario en firebase
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, "User Created", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-            }
-        });
-
-        txtLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), loginActivity.class));
-            }
-        });
         //Reproductor de video
 
         isPlaying = false;
