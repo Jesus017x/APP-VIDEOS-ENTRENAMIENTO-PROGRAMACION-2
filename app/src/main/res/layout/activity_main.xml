@@ -38,7 +38,7 @@
             android:layout_marginTop="201dp"
             android:layout_marginBottom="1dp"
             android:orientation="horizontal"
-            android:background="#32d1c4"
+            android:background="#9332a8"
             tools:ignore="MissingConstraints">
 
             <ImageView
@@ -78,6 +78,5 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
