@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         mainVideoView.start();
         isPlaying = true;
         playBtn.setImageResource(R.drawable.pausebtn);
