@@ -124,15 +124,27 @@
     </TextView>
 
     <Button
+        android:id="@+id/btn_upload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Upload"
-        android:id="@+id/btn_upload"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="379dp"
-        tools:ignore="MissingConstraints">
-
+        tools:layout_editor_absoluteY="370dp">
     </Button>
+
+    <ProgressBar
+        android:id="@+id/progressBar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:indeterminateTint="#b734eb"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="426dp">
+
+    </ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
