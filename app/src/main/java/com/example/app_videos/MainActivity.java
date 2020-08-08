@@ -118,6 +118,12 @@ public class MainActivity extends AppCompatActivity {
         isPlaying = false;
     }
 
+    public void ChooseVideo(View view) {
+    }
+
+    public void ShowVideos(View view) {
+    }
+
     public class VideoProgress extends AsyncTask<Void, Integer, Void> {
         @Override
         protected Void doInBackground(Void... voids) {

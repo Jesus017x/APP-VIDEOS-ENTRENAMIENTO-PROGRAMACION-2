@@ -19,6 +19,7 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
             tools:ignore="MissingConstraints"
+            android:backgroundTint="#000"
             />
 
         <ProgressBar
@@ -78,5 +79,60 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <EditText
+        android:id="@+id/video_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:autoText="true"
+        android:hint="Video name"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="249dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose video"
+        android:onClick="ChooseVideo"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="297dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="ShowVideos"
+        android:text="Show videos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="334dp">
+
+    </TextView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Upload"
+        android:id="@+id/btn_upload"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="379dp"
+        tools:ignore="MissingConstraints">
+
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
